@@ -24,6 +24,7 @@ public class PaC_MoN {
             myDemo.setLocationRelativeTo(null);
         }
         /* FIN Fenêtre Démo */
+        /* Fox Pac Pac *_* */
         
         //test_Julien
         
