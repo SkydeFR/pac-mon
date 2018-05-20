@@ -6,10 +6,10 @@
 package pak_emon;
 
 /**
- * PaKéMoN Project
+ * PaC'MoN Project
  * @author Skyde
  */
-public class Pak_emon {
+public class PaC_MoN {
 
     /**
      * @param args the command line arguments
