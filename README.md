@@ -1,2 +1,2 @@
-﻿# PaK-éMoN
+﻿# PaKéMoN
 2018 DUT Project
