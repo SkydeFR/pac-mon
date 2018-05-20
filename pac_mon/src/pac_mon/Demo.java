@@ -39,17 +39,15 @@ public class Demo extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("PaKéMoN Project");
-        setMaximumSize(new java.awt.Dimension(420, 380));
+        setTitle("PaC'MoN");
         setMinimumSize(new java.awt.Dimension(420, 380));
-        setPreferredSize(new java.awt.Dimension(420, 380));
         setResizable(false);
         setSize(new java.awt.Dimension(420, 380));
         getContentPane().setLayout(null);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(80, 40, 256, 106);
+        jLabel1.setBounds(60, 40, 300, 106);
 
         jButton1.setText("Nouvelle Partie");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
