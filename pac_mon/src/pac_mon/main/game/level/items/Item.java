@@ -73,6 +73,7 @@ public class Item {
             default:
                 this.size = 16;
                 this.color = new float[]{1, 1, 1, 1};
+                System.out.println("Type d'item non implémenté");
         }
     }
     

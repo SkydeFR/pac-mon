@@ -34,20 +34,22 @@ public class Level {
      */
     public void generate() {
         
-        /* Test de génération d'items en mouvement */
-        /*
-        int width = Component.width*Component.scale-88;
-        int height = Component.height*Component.scale-149;
-        int size;
-        for (int i=0; i<10000; i++) {
-            size = round(random(5,15));
-            items.add(new Item(round(random(0, width)), round(random(0, height)), random(-1,1), random(-1,1), size));
-        }
-        */
+        boolean test = false;
         
-        items.add(new Item(25, 25, DOT));
-        items.add(new Item(60, 30, FRUIT));
-        items.add(new Item(40, 50, POWER));
+        if (test) {
+            /* Test de génération d'items en mouvement */
+            int width = Component.width*Component.scale-88;
+            int height = Component.height*Component.scale-149;
+            int size;
+            for (int i=0; i<10000; i++) {
+                size = round(random(1,10));
+                items.add(new Item(round(random(width/2, width/2)), round(random(height/2, height/2)), random(-2,2), random(-2,2), size));
+            }
+        } else {
+            items.add(new Item(25, 25, DOT));
+            items.add(new Item(60, 30, FRUIT));
+            items.add(new Item(40, 50, POWER));
+        }
         
     }
     
@@ -72,7 +74,7 @@ public class Level {
         glClearColor(0.2f, 0.2f, 0.2f, 1.0f); // met a jour le background
         
         for (Item item : items) {
-            item.render(); // on fait le rendu des tiles
+            item.render(); // affiche le rendu des items
         }
     }
 }
