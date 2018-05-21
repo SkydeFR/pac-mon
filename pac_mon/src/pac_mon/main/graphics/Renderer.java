@@ -8,7 +8,7 @@ package pac_mon.main.graphics;
 import static org.lwjgl.opengl.GL11.*;
 
 /**
- * Rendu
+ * Rendu a afficher
  * @author Skyde
  */
 public class Renderer {

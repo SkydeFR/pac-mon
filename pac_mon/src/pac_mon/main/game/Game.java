@@ -5,6 +5,8 @@
  */
 package pac_mon.main.game;
 
+import pac_mon.main.game.level.Level;
+
 /**
  * Jeu
  * @author Skyde
@@ -13,20 +15,32 @@ public class Game {
     
     Level level;
     
+    /**
+     * Construction du jeu
+     */
     public Game() {
-        level = new Level();
+        this.level = new Level();
     }
     
+    /**
+     * Initialisation du jeu
+     */
     public void init() {
         level.init();
     }
     
+    /**
+     * Mise a jour du jeu
+     */
     public void update() {
         level.update();
     }
     
-    public void render(int time) {
-        level.render(time);        
+    /**
+     * Affiche le rendu du jeu
+     */
+    public void render() {
+        level.render();
     }
     
 }
