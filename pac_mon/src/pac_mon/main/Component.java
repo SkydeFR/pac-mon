@@ -165,7 +165,7 @@ public class Component {
     }
     
     /**
-     * Permet d'afficher le rendu à l'écran
+     * Permet d'afficher le rendu a l'ecran
      */
     @SuppressWarnings("empty-statement")
     private void render() {
