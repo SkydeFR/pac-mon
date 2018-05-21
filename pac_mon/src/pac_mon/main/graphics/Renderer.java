@@ -42,4 +42,5 @@ public class Renderer {
             Renderer.quadData(x, y, w, h, c); // donnees du carre
         glEnd();
     }
+    
 }
