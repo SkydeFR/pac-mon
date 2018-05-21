@@ -167,7 +167,6 @@ public class Component {
     /**
      * Permet d'afficher le rendu a l'ecran
      */
-    @SuppressWarnings("empty-statement")
     private void render() {
         view2D(width, height); //gere l'affichage 2d
         
