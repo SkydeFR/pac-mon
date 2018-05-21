@@ -6,6 +6,8 @@
 package pac_mon.main.game;
 
 import pac_mon.main.game.level.Level;
+import pac_mon.main.game.menu.Menu;
+import static pac_mon.main.game.menu.Menu.Menus.*;
 
 /**
  * Jeu
@@ -13,34 +15,42 @@ import pac_mon.main.game.level.Level;
  */
 public class Game {
     
-    Level level;
+    private Menu menu;
+    private Level level;
     
     /**
      * Construction du jeu
      */
     public Game() {
         this.level = new Level();
+        this.menu = new Menu(PRINCIPAL);
     }
     
     /**
-     * Initialisation du jeu
+     * Initialisation du jeu (avant la boucle component)
      */
     public void init() {
-        level.init();
+        //level.init();
+        //menu.init();
     }
     
     /**
-     * Mise a jour du jeu
+     * Mise a jour du jeu (a chaque tick)
      */
     public void update() {
-        level.update();
+        //level.update();
+        //menu.init();
     }
     
     /**
-     * Affiche le rendu du jeu
+     * Affiche le rendu du jeu (a chaque frame)
      */
     public void render() {
-        level.render();
+        if (Menu.menu == GAME) {
+            level.render();  
+        } else {
+            menu.render();
+        }
     }
     
 }
