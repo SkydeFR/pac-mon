@@ -13,7 +13,9 @@ import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import static org.lwjgl.opengl.GL11.*;
 import org.lwjgl.util.glu.GLU;
+
 import pac_mon.main.graphics.Renderer;
+import pac_mon.main.game.Game;
 
 
 /**
@@ -35,6 +37,8 @@ public class Component {
     
     private final DisplayMode mode; // mode d'affichage
     
+    private final Game game; // jeu
+    
     /**
      * Constructeur du composant - Initialisation
      */
@@ -51,6 +55,8 @@ public class Component {
         this.render = false;
         
         this.mode = new DisplayMode(width*scale, height*scale);
+        
+        this.game = new Game();
     }
     
     /**
@@ -69,11 +75,10 @@ public class Component {
     }
     
     /**
-     * Permet de demarrer le composant
+     * Permet d'afficher le composant
      */
-    public void run() {
-        
-        /* Demarre le composant */
+    public void display() {
+        /* Affiche le composant */
         try {
             Display.setDisplayMode(mode);
             Display.setResizable(true);
@@ -82,9 +87,15 @@ public class Component {
             Display.create();
         } catch (LWJGLException ex) {
             Logger.getLogger(Component.class.getName()).log(Level.SEVERE, null, ex); // erreur
-        }
-        
-        running = true; // le composant est demarre
+        }        
+    }
+    
+    /**
+     * Permet de demarrer le composant
+     */
+    public void run() {
+        display(); // affiche le composant
+        running = true; // le composant est en etat de marche
         loop(); // actions
     }
     
@@ -100,6 +111,8 @@ public class Component {
      * Boucle du composant - Actions
      */
     private void loop() {
+        game.init();
+        
         long timer = System.currentTimeMillis(); // timer en ms
         
         long momentA = System.nanoTime(); // mesure de temps A
@@ -118,7 +131,7 @@ public class Component {
             if (Display.isCloseRequested()) {
                 running = false;
             } else {
-                Display.update(); // met a jour l'affichage
+                Display.update(); // maintien l'affichage a jour
                 width = Display.getWidth() / scale; // met a jour la largeur du composant
                 height = Display.getHeight() / scale; // met a jour la hauteur du composant
                 
@@ -162,20 +175,18 @@ public class Component {
      */
     private void onTick() {
         time++;
+        game.update();
     }
     
     /**
-     * Permet d'afficher le rendu a l'ecran
+     * Permet d'afficher le rendu
      */
     private void render() {
         view2D(width, height); //gere l'affichage 2d
-        
         glClear(GL_COLOR_BUFFER_BIT); // met a jour le rendu
-        glClearColor(0.2f, 0.2f, 0.2f, 1.0f); // met a jour le background
+        //--
         
-        int spd = time / 2; // defini la vitesse
-        float[] color = new float[]{1.0f, 0.5f, 0.0f, 1.0f}; // couleur
-        
-        Renderer.renderQuad(30+spd, 30+spd, 16, 16, color); // dessine un carre
+        game.render(time);
     }
+    
 }
