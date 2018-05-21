@@ -6,9 +6,13 @@
 package pac_mon.main.game.menu;
 
 import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL12.GL_BGR;
+import static pac_mon.main.graphics.Calcul.random;
+import pac_mon.main.graphics.Renderer;
+import pac_mon.main.graphics.Texture;
 
 /**
- *
+ * Menu
  * @author Skyde
  */
 public class Menu {
@@ -58,6 +62,20 @@ public class Menu {
             case PRINCIPAL :
                 // Afficher menu principal
                 glClearColor(0.2f, 0.2f, 0.6f, 1.0f); // met a jour le background
+                
+                /* Test pour afficher une texture */
+                int x = 20;
+                int y = 36;
+                int size = 20;
+                Texture.icon.bind();
+                    glBegin(GL_QUADS);	
+                        glTexCoord2f(0, 0); glVertex2f(x, y);
+                        glTexCoord2f(1, 0); glVertex2f(x + size, y);
+                        glTexCoord2f(1, 1); glVertex2f(x + size, y + size);
+                        glTexCoord2f(0, 1); glVertex2f(x, y + size);
+                    glEnd();
+                Texture.icon.unbind();
+                /* Fin Test pour afficher une texture */
                 
                 // si on appuie sur le bouton "nouvelle partie"
                 if (false) {
