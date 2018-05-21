@@ -6,9 +6,6 @@
 package pac_mon.main.game.menu;
 
 import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL12.GL_BGR;
-import static pac_mon.main.graphics.Calcul.random;
-import pac_mon.main.graphics.Renderer;
 import pac_mon.main.graphics.Texture;
 
 /**

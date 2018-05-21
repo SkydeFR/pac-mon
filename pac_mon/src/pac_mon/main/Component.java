@@ -165,7 +165,7 @@ public class Component {
                 /* Si 1 seconde s'est ecoule */
                 if (System.currentTimeMillis() - timer > 1000) {
                     timer = System.currentTimeMillis(); // on reinitialise le timer
-                    Display.setTitle(title+" | Ticks: "+ticks+" | FPS: "+frames); // on affiche les compteurs
+                    Display.setTitle(title+" | TPS: "+ticks+" | FPS: "+frames); // on affiche les compteurs
                     ticks = 0; // on reinitialise le compteur de ticks
                     frames = 0; // on reinitialise le compteur de frames
                 }
