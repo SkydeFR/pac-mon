@@ -23,7 +23,7 @@ public class Game {
      */
     public Game() {
         this.level = new Level();
-        this.menu = new Menu(PRINCIPAL);
+        this.menu = new Menu(GAME);
     }
     
     /**

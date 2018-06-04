@@ -34,7 +34,7 @@ public class Level {
      */
     public void generate() {
         
-        boolean test = false;
+        boolean test = true;
         
         if (test) {
             /* Test de génération d'items en mouvement */
@@ -43,7 +43,7 @@ public class Level {
             int size;
             for (int i=0; i<10000; i++) {
                 size = round(random(1,10));
-                items.add(new Item(round(random(width/2, width/2)), round(random(height/2, height/2)), random(-2,2), random(-2,2), size));
+                items.add(new Item(round(random(0, width)), round(random(0, height)), random(-2,2), random(-2,2), size));
             }
         } else {
             items.add(new Item(25, 25, DOT));
